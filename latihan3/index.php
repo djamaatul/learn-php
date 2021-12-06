@@ -7,14 +7,14 @@ $database = mysqli_connect('localhost','djamaatul','qewadsws','latihan2');
 //     // echo $data["id"];
 // }
 
-if(isset($_GET["getnama"])){
+if(isset($_GET["getdata"])){
     global $database;
     $datas = [];
     $current = 0;
-    if($_GET["getnama"] == 'all'){
+    if($_GET["getdata"] == 'all'){
         $query = mysqli_query($database, "SELECT * FROM users");
     }else{
-        $query = mysqli_query($database, "SELECT * FROM users where user = '".$_GET['getnama']."'");
+        $query = mysqli_query($database, "SELECT * FROM users where user = '".$_GET['getdata']."'");
     }
     while($data = mysqli_fetch_object($query)){
         $datas[$current] = $data;
